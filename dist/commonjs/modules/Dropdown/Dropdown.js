@@ -898,7 +898,11 @@ var Dropdown = function (_Component) {
         this.setSelectedIndex(nextProps.value);
       }
 
-      if (!(0, _isEqual3.default)(nextProps.options, this.props.options)) {
+      if (!(0, _isEqual3.default)(nextProps.options.map(function (o) {
+        return o.value;
+      }), this.props.options.map(function (o) {
+        return o.value;
+      }))) {
         this.setSelectedIndex(undefined, nextProps.options);
       }
     }

@@ -772,7 +772,11 @@ var Dropdown = function (_Component) {
         this.setSelectedIndex(nextProps.value);
       }
 
-      if (!_isEqual(nextProps.options, this.props.options)) {
+      if (!_isEqual(nextProps.options.map(function (o) {
+        return o.value;
+      }), this.props.options.map(function (o) {
+        return o.value;
+      }))) {
         this.setSelectedIndex(undefined, nextProps.options);
       }
     }
