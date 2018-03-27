@@ -447,7 +447,7 @@ export default class Dropdown extends Component {
       this.setSelectedIndex(nextProps.value)
     }
 
-    if (!_.isEqual(nextProps.options, this.props.options)) {
+    if (!_.isEqual(nextProps.options.map(o => o.value), this.props.options.map(o => o.value))) {
       this.setSelectedIndex(undefined, nextProps.options)
     }
   }
